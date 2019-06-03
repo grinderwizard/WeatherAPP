@@ -14,11 +14,11 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
 
                 var list = JSON.parse(xhttp.responseText);
-            var r = "1 USD = " + list[0].buy + " UAH </br>";
-            r += "1 RUR = " + list[2].buy + " UAH </br>";
-            r += "1 EUR = " + list[1].buy + " UAH </br>";
-            result.innerHTML = r;
-        }
+                var r = "1 USD = " + list[0].buy + " UAH </br>";
+                r += "1 RUR = " + list[2].buy + " UAH </br>";
+                r += "1 EUR = " + list[1].buy + " UAH </br>";
+                result.innerHTML = r;
+            }
         });
     }
 
@@ -47,21 +47,21 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 var list = JSON.parse(xhttp.responseText);
                 console.log(list.name);
-               var res = '<div>' + list.name + ' </div>' +
-                    '<span class="info_Area_unit">Температура: ' + Math.round(list.main.temp - 273.15) + ' ℃</span>\n' +
-                    '<span class="info_Area_unit">Видимость: ' + list.weather[0].description + '</span>' +
-                    '<span class="info_Area_unit">Скорость ветра: ' + list.wind.speed + ' mph</span>' +
-                    '<span class="info_Area_unit">Осадки: ' + list.main.humidity + ' %</span>';
+                var res = '<div>' + list.name + ' </div>' +
+                    '<span class="info_Area_unit">Temperature: ' + Math.round(list.main.temp - 273.15) + ' ℃</span>\n' +
+                    '<span class="info_Area_unit">Visibility: ' + list.weather[0].description + '</span>' +
+                    '<span class="info_Area_unit">Wind speed: ' + list.wind.speed + ' mph</span>' +
+                    '<span class="info_Area_unit">Precipitation: ' + list.main.humidity + ' %</span>';
                 x.innerHTML = res;
             }
 
         }
     }
+
     getLocation();
 
 
-
-        loadStorage();
+    loadStorage();
 
     function loadStorage() {
         var arr = localStorage.getItem('cities');
@@ -83,27 +83,12 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('get').addEventListener('click', getWeather);
     document.getElementById('del').addEventListener('click', del);
 
-    // function all(event) {
-    //     var className = event.target.id;
-    //     console.log('className = ' + className);
-    //     console.log('target = ' + event.target.getAttribute('info_Area'));
-    //
-    //     if (className === 'del') {
-    //         del();
-    //     }
-    //
-    //     if (className === 'get') {
-    //         getWeather();
-    //     }
-    //
-    // }
 
     function del() {
         console.log('*** ' + document.getElementById('del'));
         console.log('*** ' + document.getElementById('del').value);
         localStorage.clear();
-        // var dynDiv = document.createElement("");
-        // document.getElementById('result2').appendChild(dynDiv);
+
         window.location.reload();
     }
 
@@ -129,12 +114,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 } else {
                     var list = JSON.parse(xhttp.responseText);
                     res = '<div>' + city + ' </div>' +
-                        '<span class="info_Area_unit">Температура: ' + Math.round(list.main.temp - 273.15) + ' ℃</span>\n' +
-                        '<span class="info_Area_unit">Видимость: ' + list.weather[0].description + '</span>' +
-                        '<span class="info_Area_unit">Скорость ветра: ' + list.wind.speed + ' mph</span>' +
-                        '<span class="info_Area_unit">Осадки: ' + list.main.humidity + ' %</span>';
-                    // '<button class="info_Area_dell_unit" id="del" data-remove="">Удалить' +
-                    // '<b class="non_display">' + city + '</b> </button>';
+                        '<span class="info_Area_unit">Temperature: ' + Math.round(list.main.temp - 273.15) + ' ℃</span>\n' +
+                        '<span class="info_Area_unit">Visibility: ' + list.weather[0].description + '</span>' +
+                        '<span class="info_Area_unit">Wind speed: ' + list.wind.speed + ' mph</span>' +
+                        '<span class="info_Area_unit">Precipitation: ' + list.main.humidity + ' %</span>';
+
 
                     if (arr === null) {
                         arr[0] = city;
@@ -148,8 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         document.getElementById('result2').appendChild(dynDiv);
                     } else if (arr.includes(city)) {
                         console.log('Already have');
-                        // var oldDiv = document.getElementById('div_' + city);
-                        // oldDiv.className = 'non_display';
+
                     } else {
                         arr[arr.length] = city;
                         localStorage.setItem(city, res);
@@ -170,11 +153,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    // document.getElementById('get').addEventListener('click', getWeather);
-    //
-    // document.getElementById('del').addEventListener('click', del);
 
 });
-
-
-
