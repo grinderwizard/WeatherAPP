@@ -1,0 +1,127 @@
+.main {
+    border: 1px solid #b5a8ff;
+    width: 40%;
+    height: 80%;
+    /*background-color: #7CFC00;*/
+    background-image: linear-gradient(#e7fb10, #122feb);
+    margin: 0 auto;
+    margin-top: 10%;
+    border-radius: 2%;
+}
+
+.cityChoise {
+    margin: 0 auto;
+    /*border: 1px solid #f3ffb0;*/
+    width: 50%;
+    height: 20px;
+    background-color: rgba(234, 252, 255, 0.06);
+
+}
+
+.main_back {
+    width: 100%;
+    height: 100vh;
+    background: url("http://www.gandex.ru/upl/oboi/u17782_9043_1-7721.jpg");
+    display: inline-block;
+    background-size: cover;
+}
+
+#say {
+    width: 160px;
+    height: 27px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    border-radius: 5%;
+}
+
+.btn_phone {
+    border-radius: 5%;
+    background: #e8ffca;
+    width: 225px;
+}
+
+.btn_main_area {
+    width: 10%;
+    color: #1a29ff;
+}
+
+.city_font_style {
+    font-family: sans-serif;
+}
+
+.cash_index {
+    float: right;
+    position: relative;
+    width: 200px;
+    height: 75px;
+    margin-top: 10%;
+    margin-right: 12%;
+    border-radius: 3%;
+
+}
+
+.info_Area {
+    border: 1px solid #ecf5a4;;
+    width: 99%;
+    height: 150px;
+    margin-top: 1px;
+    background: #ecf5a4;
+}
+
+body {
+    margin: 0;
+}
+
+.result_style {
+    display: flex;
+    background: linear-gradient(45deg, #EECFBA, #C5DDE8);
+}
+
+.main_result_dinamic {
+    color: #1317ff;
+    font-family: sans-serif;
+    font-size: 14px;
+
+
+}
+
+.main_result_default {
+    flex-direction: row;
+
+}
+.main_result_default_city{
+    flex-direction: row;
+    color: #7CFC00;
+    font-size: 18px;
+}
+.info_Area_unit {
+    border-radius: 3%;
+    font-family: Arial, sans-serif;
+    font-style: italic;
+    font-size: 14px;
+    display: flex;
+
+
+}
+
+.info_Area_dell_unit {
+    border-radius: 3%;
+    font-family: Arial, sans-serif;
+    font-style: italic;
+    font-size: 14px;
+    display: flex;
+}
+
+.non_display {
+    display: none;
+}
+
+.your_city {
+    float: left;
+    position: relative;
+    width: 200px;
+    height: 75px;
+    margin-top: 10%;
+    margin-right: 12%;
+    border-radius: 3%;
+}
